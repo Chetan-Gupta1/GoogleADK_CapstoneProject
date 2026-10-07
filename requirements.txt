@@ -1,0 +1,8 @@
+google-adk
+pandas
+python-pptx
+openpyxl
+pillow
+google-genai
+python-dotenv
+pydantic>=2

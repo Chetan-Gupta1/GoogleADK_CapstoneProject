@@ -1,0 +1,431 @@
+{
+  "content_source": "gemini",
+  "slide_count": 5,
+  "analysis": {
+    "first_quarter": "2025-Q3",
+    "latest_quarter": "2026-Q2",
+    "previous_quarter": "2026-Q1",
+    "top_region": "North America",
+    "growth_region": "APAC",
+    "risk_region": "Latin America",
+    "customer_leader": "APAC",
+    "capacity_region": "APAC",
+    "kpis": {
+      "total_revenue_usd_m": 1280.0,
+      "revenue_qoq_growth_pct": 4.489795918367356,
+      "unweighted_regional_nps": 49.75
+    },
+    "regions": {
+      "APAC": {
+        "Revenue_USD_M": {
+          "first": 260.0,
+          "latest": 330.0,
+          "change": 70.0
+        },
+        "Units_Sold_K": {
+          "first": 700.0,
+          "latest": 860.0,
+          "change": 160.0
+        },
+        "Returns_Rate_pct": {
+          "first": 3.0,
+          "latest": 3.6,
+          "change": 0.6000000000000001
+        },
+        "Marketing_Spend_USD_M": {
+          "first": 20.0,
+          "latest": 24.0,
+          "change": 4.0
+        },
+        "revenue_growth_pct": 26.923076923076916,
+        "NPS": {
+          "first": 58.0,
+          "latest": 62.0,
+          "change": 4.0
+        },
+        "CSAT_pct": {
+          "first": 90.0,
+          "latest": 92.0,
+          "change": 2.0
+        },
+        "Avg_Delivery_Days": {
+          "first": 2.5,
+          "latest": 2.2,
+          "change": -0.2999999999999998
+        },
+        "Support_Tickets_K": {
+          "first": 12.0,
+          "latest": 11.0,
+          "change": -1.0
+        },
+        "Stockout_Rate_pct": {
+          "first": 6.0,
+          "latest": 8.5,
+          "change": 2.5
+        },
+        "Return_Processing_Days": {
+          "first": 3.0,
+          "latest": 4.0,
+          "change": 1.0
+        },
+        "Warehouse_Capacity_Util_pct": {
+          "first": 80.0,
+          "latest": 92.0,
+          "change": 12.0
+        },
+        "Fraud_Incidents": {
+          "first": 7.0,
+          "latest": 10.0,
+          "change": 3.0
+        }
+      },
+      "Europe": {
+        "Revenue_USD_M": {
+          "first": 310.0,
+          "latest": 345.0,
+          "change": 35.0
+        },
+        "Units_Sold_K": {
+          "first": 820.0,
+          "latest": 880.0,
+          "change": 60.0
+        },
+        "Returns_Rate_pct": {
+          "first": 3.8,
+          "latest": 4.1,
+          "change": 0.2999999999999998
+        },
+        "Marketing_Spend_USD_M": {
+          "first": 25.0,
+          "latest": 25.0,
+          "change": 0.0
+        },
+        "revenue_growth_pct": 11.290322580645151,
+        "NPS": {
+          "first": 48.0,
+          "latest": 53.0,
+          "change": 5.0
+        },
+        "CSAT_pct": {
+          "first": 86.0,
+          "latest": 88.0,
+          "change": 2.0
+        },
+        "Avg_Delivery_Days": {
+          "first": 3.8,
+          "latest": 3.2,
+          "change": -0.5999999999999996
+        },
+        "Support_Tickets_K": {
+          "first": 15.0,
+          "latest": 14.0,
+          "change": -1.0
+        },
+        "Stockout_Rate_pct": {
+          "first": 4.0,
+          "latest": 4.0,
+          "change": 0.0
+        },
+        "Return_Processing_Days": {
+          "first": 5.0,
+          "latest": 5.0,
+          "change": 0.0
+        },
+        "Warehouse_Capacity_Util_pct": {
+          "first": 70.0,
+          "latest": 76.0,
+          "change": 6.0
+        },
+        "Fraud_Incidents": {
+          "first": 9.0,
+          "latest": 11.0,
+          "change": 2.0
+        }
+      },
+      "Latin America": {
+        "Revenue_USD_M": {
+          "first": 150.0,
+          "latest": 140.0,
+          "change": -10.0
+        },
+        "Units_Sold_K": {
+          "first": 430.0,
+          "latest": 390.0,
+          "change": -40.0
+        },
+        "Returns_Rate_pct": {
+          "first": 6.5,
+          "latest": 8.2,
+          "change": 1.6999999999999993
+        },
+        "Marketing_Spend_USD_M": {
+          "first": 15.0,
+          "latest": 13.0,
+          "change": -2.0
+        },
+        "revenue_growth_pct": -6.666666666666665,
+        "NPS": {
+          "first": 38.0,
+          "latest": 29.0,
+          "change": -9.0
+        },
+        "CSAT_pct": {
+          "first": 80.0,
+          "latest": 74.0,
+          "change": -6.0
+        },
+        "Avg_Delivery_Days": {
+          "first": 5.5,
+          "latest": 7.5,
+          "change": 2.0
+        },
+        "Support_Tickets_K": {
+          "first": 20.0,
+          "latest": 31.0,
+          "change": 11.0
+        },
+        "Stockout_Rate_pct": {
+          "first": 9.0,
+          "latest": 12.5,
+          "change": 3.5
+        },
+        "Return_Processing_Days": {
+          "first": 7.0,
+          "latest": 10.0,
+          "change": 3.0
+        },
+        "Warehouse_Capacity_Util_pct": {
+          "first": 65.0,
+          "latest": 74.0,
+          "change": 9.0
+        },
+        "Fraud_Incidents": {
+          "first": 18.0,
+          "latest": 30.0,
+          "change": 12.0
+        }
+      },
+      "North America": {
+        "Revenue_USD_M": {
+          "first": 420.0,
+          "latest": 465.0,
+          "change": 45.0
+        },
+        "Units_Sold_K": {
+          "first": 1050.0,
+          "latest": 1120.0,
+          "change": 70.0
+        },
+        "Returns_Rate_pct": {
+          "first": 4.2,
+          "latest": 4.3,
+          "change": 0.09999999999999964
+        },
+        "Marketing_Spend_USD_M": {
+          "first": 35.0,
+          "latest": 34.0,
+          "change": -1.0
+        },
+        "revenue_growth_pct": 10.71428571428572,
+        "NPS": {
+          "first": 52.0,
+          "latest": 55.0,
+          "change": 3.0
+        },
+        "CSAT_pct": {
+          "first": 88.0,
+          "latest": 89.0,
+          "change": 1.0
+        },
+        "Avg_Delivery_Days": {
+          "first": 3.2,
+          "latest": 2.9,
+          "change": -0.30000000000000027
+        },
+        "Support_Tickets_K": {
+          "first": 18.0,
+          "latest": 18.0,
+          "change": 0.0
+        },
+        "Stockout_Rate_pct": {
+          "first": 3.5,
+          "latest": 3.8,
+          "change": 0.2999999999999998
+        },
+        "Return_Processing_Days": {
+          "first": 4.0,
+          "latest": 4.0,
+          "change": 0.0
+        },
+        "Warehouse_Capacity_Util_pct": {
+          "first": 72.0,
+          "latest": 78.0,
+          "change": 6.0
+        },
+        "Fraud_Incidents": {
+          "first": 12.0,
+          "latest": 13.0,
+          "change": 1.0
+        }
+      }
+    },
+    "charts": {
+      "performance": {
+        "title": "Revenue by region (USD M)",
+        "type": "line",
+        "categories": [
+          "2025-Q3",
+          "2025-Q4",
+          "2026-Q1",
+          "2026-Q2"
+        ],
+        "series": {
+          "APAC": [
+            260.0,
+            300.0,
+            305.0,
+            330.0
+          ],
+          "Europe": [
+            310.0,
+            350.0,
+            330.0,
+            345.0
+          ],
+          "Latin America": [
+            150.0,
+            165.0,
+            150.0,
+            140.0
+          ],
+          "North America": [
+            420.0,
+            460.0,
+            440.0,
+            465.0
+          ]
+        }
+      },
+      "customer": {
+        "title": "Customer NPS by region (points)",
+        "type": "line",
+        "categories": [
+          "2025-Q3",
+          "2025-Q4",
+          "2026-Q1",
+          "2026-Q2"
+        ],
+        "series": {
+          "APAC": [
+            58.0,
+            60.0,
+            61.0,
+            62.0
+          ],
+          "Europe": [
+            48.0,
+            50.0,
+            51.0,
+            53.0
+          ],
+          "Latin America": [
+            38.0,
+            35.0,
+            32.0,
+            29.0
+          ],
+          "North America": [
+            52.0,
+            54.0,
+            53.0,
+            55.0
+          ]
+        }
+      },
+      "risk": {
+        "title": "Stockout rate by region (%)",
+        "type": "line",
+        "categories": [
+          "2025-Q3",
+          "2025-Q4",
+          "2026-Q1",
+          "2026-Q2"
+        ],
+        "series": {
+          "APAC": [
+            6.0,
+            7.5,
+            8.0,
+            8.5
+          ],
+          "Europe": [
+            4.0,
+            4.5,
+            4.2,
+            4.0
+          ],
+          "Latin America": [
+            9.0,
+            10.5,
+            11.0,
+            12.5
+          ],
+          "North America": [
+            3.5,
+            5.0,
+            4.0,
+            3.8
+          ]
+        }
+      }
+    }
+  },
+  "content": {
+    "slide_1": {
+      "title": "NovaRetail Achieves Steady Growth Amid Regional Operational Risks",
+      "summary": "NovaRetail achieved total revenue of 1280.0 million USD in 2026-Q2, representing 4.49 percent QoQ growth. While APAC led expansion with 26.92 percent revenue growth since 2025-Q3, Latin America experienced a 6.67 percent revenue decline. Operational risks present the biggest threat, as Latin America delivery times rose by 2.0 days and fraud incidents increased by 12.",
+      "icon": "globe_region.png"
+    },
+    "slide_2": {
+      "title": "Revenue Expansion Led by APAC and North America",
+      "insights": [
+        "Total revenue reached 1280.0 million USD in 2026-Q2, growing 4.49 percent QoQ from the previous quarter.",
+        "APAC revenue grew by 26.92 percent from 2025-Q3 to 2026-Q2, reaching 330.0 million USD.",
+        "North America remains the top revenue contributor, increasing by 45.0 million USD to 465.0 million USD.",
+        "Latin America revenue declined by 6.67 percent, falling from 150.0 million USD to 140.0 million USD."
+      ],
+      "icon": "growth_chart.png"
+    },
+    "slide_3": {
+      "title": "Customer Experience Diverges Across Key Regions",
+      "insights": [
+        "Mean regional NPS stands at 49.75 points, with APAC leading at 62.0 points in 2026-Q2.",
+        "Latin America NPS fell by 9.0 points to 29.0 points, while CSAT decreased by 6.0 percentage points.",
+        "Europe improved customer satisfaction, raising NPS by 5.0 points and CSAT by 2.0 percentage points.",
+        "North America customer metrics improved slightly, with NPS rising by 3.0 points to 55.0 points."
+      ],
+      "icon": "customer_star.png"
+    },
+    "slide_4": {
+      "title": "Operational Risks and Supply Chain Constraints Intensify",
+      "insights": [
+        "Latin America delivery times increased by 2.0 days, while support tickets surged by 11.0K.",
+        "Fraud incidents in Latin America rose from 18 to 30, representing a significant security risk.",
+        "APAC warehouse capacity utilization reached 92.0 percent, while stockout rates increased by 2.5 percentage points.",
+        "Returns rate in Latin America increased by 1.7 percentage points, reaching 8.2 percent in 2026-Q2."
+      ],
+      "icon": "risk_alert.png"
+    },
+    "slide_5": {
+      "title": "Recommended Actions to Address Operational Bottlenecks",
+      "recommendations": [
+        "Expand warehouse capacity in APAC to address the 92.0 percent utilization rate and rising stockouts.",
+        "Implement fraud prevention measures in Latin America to address the rise to 30 fraud incidents.",
+        "Optimize Latin America logistics to reduce delivery times, which increased by 2.0 days since 2025-Q3.",
+        "Streamline return processing in APAC to reduce processing times, which rose by 1.0 days."
+      ],
+      "closing": "Addressing these operational challenges will help stabilize Latin America and sustain APAC growth.",
+      "icon": "lightbulb_action.png"
+    }
+  }
+}
