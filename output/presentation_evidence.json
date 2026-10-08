@@ -382,49 +382,49 @@
   },
   "content": {
     "slide_1": {
-      "title": "NovaRetail Achieves Steady Growth Amid Regional Operational Risks",
-      "summary": "NovaRetail achieved total revenue of 1280.0 million USD in 2026-Q2, representing 4.49 percent QoQ growth. While APAC led expansion with 26.92 percent revenue growth since 2025-Q3, Latin America experienced a 6.67 percent revenue decline. Operational risks present the biggest threat, as Latin America delivery times rose by 2.0 days and fraud incidents increased by 12.",
+      "title": "NovaRetail Achieves Solid Growth Amid Regional Operational Risks",
+      "summary": "NovaRetail delivered 4.49% QoQ revenue growth to reach 1280.0 million USD in 2026-Q2, driven by strong performance in North America and APAC. APAC represents our largest expansion opportunity, with revenue growing 26.92% since 2025-Q3. However, severe operational risks in Latin America, where delivery times increased by 2.0 days and NPS dropped by 9.0 points, threaten overall performance.",
       "icon": "globe_region.png"
     },
     "slide_2": {
-      "title": "Revenue Expansion Led by APAC and North America",
+      "title": "Strong Revenue Growth Led by North America and APAC",
       "insights": [
-        "Total revenue reached 1280.0 million USD in 2026-Q2, growing 4.49 percent QoQ from the previous quarter.",
-        "APAC revenue grew by 26.92 percent from 2025-Q3 to 2026-Q2, reaching 330.0 million USD.",
-        "North America remains the top revenue contributor, increasing by 45.0 million USD to 465.0 million USD.",
-        "Latin America revenue declined by 6.67 percent, falling from 150.0 million USD to 140.0 million USD."
+        "Total revenue reached 1280.0 million USD in 2026-Q2, representing a solid 4.49% QoQ growth rate.",
+        "North America remains our largest market, growing revenue by 10.71% to 465.0 million USD since 2025-Q3.",
+        "APAC led expansion with 26.92% revenue growth, rising from 260.0 million USD to 330.0 million USD.",
+        "Latin America revenue declined by 6.67% to 140.0 million USD since 2025-Q3, reflecting severe operational headwinds."
       ],
       "icon": "growth_chart.png"
     },
     "slide_3": {
-      "title": "Customer Experience Diverges Across Key Regions",
+      "title": "Customer Satisfaction Rises Globally Except in Latin America",
       "insights": [
-        "Mean regional NPS stands at 49.75 points, with APAC leading at 62.0 points in 2026-Q2.",
-        "Latin America NPS fell by 9.0 points to 29.0 points, while CSAT decreased by 6.0 percentage points.",
-        "Europe improved customer satisfaction, raising NPS by 5.0 points and CSAT by 2.0 percentage points.",
-        "North America customer metrics improved slightly, with NPS rising by 3.0 points to 55.0 points."
+        "Unweighted regional NPS stands at 49.75 points, with APAC leading customer satisfaction at 62.0 points.",
+        "Europe improved customer sentiment, increasing NPS by 5.0 points and CSAT by 2.0 percentage points since 2025-Q3.",
+        "North America customer metrics improved, with NPS rising 3.0 points to reach 55.0 points since 2025-Q3.",
+        "Latin America NPS dropped 9.0 points and CSAT fell 6.0 percentage points since 2025-Q3, showing deteriorated sentiment."
       ],
       "icon": "customer_star.png"
     },
     "slide_4": {
-      "title": "Operational Risks and Supply Chain Constraints Intensify",
+      "title": "Rising Supply Chain and Fraud Risks Threaten Operations",
       "insights": [
-        "Latin America delivery times increased by 2.0 days, while support tickets surged by 11.0K.",
-        "Fraud incidents in Latin America rose from 18 to 30, representing a significant security risk.",
-        "APAC warehouse capacity utilization reached 92.0 percent, while stockout rates increased by 2.5 percentage points.",
-        "Returns rate in Latin America increased by 1.7 percentage points, reaching 8.2 percent in 2026-Q2."
+        "Latin America delivery times increased by 2.0 days to 7.5 days since 2025-Q3, indicating severe operational risks.",
+        "Fraud incidents in Latin America surged by 12 cases to 30.0 incidents since 2025-Q3, posing security threats.",
+        "APAC warehouse capacity utilization reached 92.0%, driving stockout rates up by 2.5 percentage points since 2025-Q3.",
+        "Support tickets in Latin America spiked by 11.0K since 2025-Q3, reflecting growing customer frustration with delays."
       ],
       "icon": "risk_alert.png"
     },
     "slide_5": {
-      "title": "Recommended Actions to Address Operational Bottlenecks",
+      "title": "Strategic Recommendations to Mitigate Risk and Support Growth",
       "recommendations": [
-        "Expand warehouse capacity in APAC to address the 92.0 percent utilization rate and rising stockouts.",
-        "Implement fraud prevention measures in Latin America to address the rise to 30 fraud incidents.",
-        "Optimize Latin America logistics to reduce delivery times, which increased by 2.0 days since 2025-Q3.",
-        "Streamline return processing in APAC to reduce processing times, which rose by 1.0 days."
+        "Optimize Latin America logistics to reduce the 7.5-day delivery average and lower the 31.0K support tickets.",
+        "Deploy fraud prevention measures in Latin America to address the surge to 30.0 incidents since 2025-Q3.",
+        "Expand APAC warehouse capacity to relieve the 92.0% utilization rate and mitigate the 8.5% stockout rate.",
+        "Standardize European return processes to maintain the stable 5.0-day processing time and support NPS growth."
       ],
-      "closing": "Addressing these operational challenges will help stabilize Latin America and sustain APAC growth.",
+      "closing": "Addressing these critical operational bottlenecks will safeguard NovaRetail's growth trajectory and protect customer loyalty.",
       "icon": "lightbulb_action.png"
     }
   }
