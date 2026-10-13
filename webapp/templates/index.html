@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaRetail AI Executive Review Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="brand">
+          <span class="brand-icon">🛒</span>
+          <div class="brand-info">
+            <span class="brand-title">NovaRetail AI Executive Review</span>
+            <span class="brand-subtitle">Board-Ready Quarterly Business Review Builder</span>
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <button class="btn btn-ghost" onclick="showInstructions()">
+            📖 Instructions
+          </button>
+          <button class="btn btn-secondary" id="navAnalyzeBtn" onclick="analyzeDataset()">
+            1. Analyze Data
+          </button>
+          <button class="btn btn-secondary" id="navGenerateBtn" onclick="generateContent()">
+            2. AI Narrative
+          </button>
+          <button class="btn btn-secondary" id="navBuildBtn" onclick="buildPresentation()">
+            3. Build Presentation
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+
+      <!-- Step Indicator -->
+      <div class="workflow-stepper">
+        <div class="step step-completed" id="step-data">
+          <span class="step-num">1</span>
+          <span class="step-label">Data Source</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step" id="step-metrics">
+          <span class="step-num">2</span>
+          <span class="step-label">Analysis & KPIs</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step" id="step-narrative">
+          <span class="step-num">3</span>
+          <span class="step-label">AI Narrative & Chat</span>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step" id="step-presentation">
+          <span class="step-num">4</span>
+          <span class="step-label">PowerPoint Deck</span>
+        </div>
+      </div>
+
+      <!-- Dataset Card -->
+      <section class="card data-card">
+        <div class="data-header">
+          <div class="data-info">
+            <span class="data-badge">Active Dataset</span>
+            <h3 id="activeDatasetLabel">novaretail_dataset.xlsx</h3>
+            <p class="data-subtext">Complete 4-region &times; 4-quarter grid (Performance, Customer NPS, Operational Risk)</p>
+          </div>
+          <button class="btn btn-outline" id="toggleUploadBtn" onclick="toggleUploadDrawer()">
+            📂 Change / Upload Excel ▾
+          </button>
+        </div>
+
+        <!-- Collapsible Upload Drawer -->
+        <div class="upload-drawer" id="uploadDrawer" style="display: none;">
+          <div class="upload-drawer-inner">
+            <p class="drawer-desc">
+              Upload a customized NovaRetail Excel template (<code>.xlsx</code>). The file will be automatically validated against required sheets and schemas.
+            </p>
+            <div class="upload-row">
+              <input
+                type="file"
+                id="excelFileInput"
+                accept=".xlsx,.xls"
+                class="file-input"
+              />
+              <button class="btn btn-primary" id="uploadBtn" onclick="uploadExcel()">
+                ⬆️ Upload Excel
+              </button>
+            </div>
+            <div id="upload-status"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Primary Action Banner -->
+      <section class="card action-banner" id="actionBanner">
+        <div class="action-banner-text">
+          <h2>Generate Executive Review</h2>
+          <p>Compute quarterly metrics, draft Gemini-written executive narratives, and export the PowerPoint deck.</p>
+        </div>
+        <div class="action-banner-buttons">
+          <button class="btn btn-primary" id="mainAnalyzeBtn" onclick="analyzeDataset()">
+            📊 Analyze Dataset
+          </button>
+          <button class="btn btn-primary" id="mainGenerateBtn" onclick="generateContent()">
+            ✨ Generate AI Narrative
+          </button>
+          <button class="btn btn-primary" id="mainBuildBtn" onclick="buildPresentation()">
+            🚀 Build Presentation
+          </button>
+        </div>
+      </section>
+
+      <!-- Results / KPI Overview Section -->
+      <section id="results"></section>
+
+      <!-- 2-Column Workspace for Narrative & Interactive AI Chat -->
+      <section class="workspace-grid" id="workspaceContainer" style="display: none;">
+
+        <!-- Left Column: Executive Slide Preview Cards -->
+        <div class="narrative-column" id="narrativeColumn">
+          <div class="column-header">
+            <div class="column-title-group">
+              <h2 id="narrativeSectionTitle">📄 Executive Slide Deck Narrative</h2>
+              <span class="narrative-tag" id="narrativeTag">AI Draft</span>
+            </div>
+            <p class="column-desc">Review the slide-by-slide copy. Use the AI Assistant on the right to tailor any point.</p>
+          </div>
+
+          <div id="narrative"></div>
+
+          <!-- Bottom CTA inside Narrative Column -->
+          <div class="narrative-bottom-cta" id="narrativeBottomCta">
+            <div class="cta-inner">
+              <div class="cta-text">
+                <h3>Satisfied with this narrative?</h3>
+                <p>Compile the board-ready PowerPoint presentation with these exact slide insights.</p>
+              </div>
+              <button class="btn btn-accent btn-lg" id="bottomNarrativeBuildBtn" onclick="buildPresentation()">
+                🚀 Build Presentation Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Sticky Interactive AI Assistant Chat -->
+        <div class="chat-column" id="chatColumn">
+          <div class="card chat-card sticky-chat">
+            <div class="chat-header">
+              <div class="chat-title-row">
+                <div class="chat-title-group">
+                  <h3>💬 AI Copilot</h3>
+                  <span class="chat-status-badge">🟢 Gemini 3.5 Flash</span>
+                </div>
+                <button type="button" class="btn btn-ghost btn-sm" onclick="resetChatSession()" title="Clear chat history and start fresh" style="font-size: 11px; padding: 4px 8px;">
+                  🔄 Clear Chat
+                </button>
+              </div>
+              <p class="chat-subtitle">
+                Ask AI to adjust the executive summary, reframe takeaways, or rewrite slide bullets.
+              </p>
+            </div>
+
+            <!-- Quick Suggestion Chips -->
+            <div class="prompt-chips">
+              <span class="chip-label">Suggestions:</span>
+              <button type="button" class="chip" onclick="applySuggestion('Make the Executive Summary more punchy and concise')">⚡ Shorten Summary</button>
+              <button type="button" class="chip" onclick="applySuggestion('Emphasize APAC rapid expansion and high customer NPS')">🌏 Highlight APAC Growth</button>
+              <button type="button" class="chip" onclick="applySuggestion('Strengthen supply chain and warehouse risk mitigation in recommendations')">🛡️ Strengthen Risk Actions</button>
+              <button type="button" class="chip" onclick="applySuggestion('Make all bullet points more action-oriented with strong verbs')">🎯 Action-Oriented Bullets</button>
+            </div>
+
+            <!-- Scrollable Messages Area -->
+            <div id="chat-messages" class="chat-messages"></div>
+
+            <!-- Chat Input Row -->
+            <div class="chat-input-row">
+              <textarea
+                id="chatInput"
+                placeholder="Type instructions to modify the summary or slides (e.g., 'Emphasize APAC growth in summary'). Press Enter to send..."
+                rows="2"
+              ></textarea>
+              <button class="btn btn-primary chat-send-btn" id="chatSendBtn" onclick="sendChatMessage()">
+                Send 🚀
+              </button>
+            </div>
+
+            <!-- Direct Build CTA Right inside Chat: Zero Scrolling Needed! -->
+            <div class="chat-build-footer">
+              <button class="btn btn-accent btn-block btn-lg" id="chatBuildBtn" onclick="buildPresentation()">
+                🚀 Build Presentation with Current Narrative
+              </button>
+              <p class="chat-build-tip">
+                💡 <em>Click here anytime to generate your PowerPoint with these exact customized insights.</em>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Legacy / Fallback build status div -->
+      <div id="build-status"></div>
+
+    </main>
+
+    <!-- Modern Build Presentation Modal -->
+    <div id="buildModal" class="modal">
+      <div class="modal-content build-modal-content">
+        <span class="close" onclick="closeBuildModal()">&times;</span>
+        <div id="buildModalBody">
+          <!-- Dynamically populated during building and upon completion -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal">
+      <div class="modal-content instructions-modal-content">
+        <span class="close" onclick="closeInstructions()">&times;</span>
+
+        <div class="instructions-header">
+          <div class="instructions-badge">📖 User Guide &amp; Workflow</div>
+          <h2 class="instructions-title">How NovaRetail Works</h2>
+          <p class="instructions-subtitle">
+            Follow this 5-step process to transform raw Excel retail data into a polished, board-ready PowerPoint presentation.
+          </p>
+        </div>
+
+        <div class="instruction-steps">
+
+          <!-- Step 1 -->
+          <div class="instruction-card">
+            <div class="instruction-icon-wrap step-1-color">
+              <span class="instruction-step-num">1</span>
+            </div>
+            <div class="instruction-card-content">
+              <div class="instruction-card-header">
+                <h3>Select or Upload Excel Dataset</h3>
+                <span class="step-tag">Data Ingestion</span>
+              </div>
+              <p>
+                The web app is ready out-of-the-box with the bundled dataset (<code>novaretail_dataset.xlsx</code>). To use your own data, click <strong>"📂 Change / Upload Excel ▾"</strong>, choose your <code>.xlsx</code> file, and click <strong>"⬆️ Upload Excel"</strong>.
+              </p>
+              <div class="instruction-tip">
+                💡 <strong>Schema requirements:</strong> Custom workbooks must contain 3 sheets (<code>Regional_Performance</code>, <code>Customer_Experience</code>, <code>Operational_Risk</code>) structured across a 4-region &times; 4-quarter grid.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="instruction-card">
+            <div class="instruction-icon-wrap step-2-color">
+              <span class="instruction-step-num">2</span>
+            </div>
+            <div class="instruction-card-content">
+              <div class="instruction-card-header">
+                <h3>Analyze Dataset &amp; Compute KPIs</h3>
+                <span class="step-tag">Automated Analytics</span>
+              </div>
+              <p>
+                Click <strong>"1. Analyze Data"</strong>. Python and pandas will calculate quarterly revenue totals, QoQ growth rates, mean regional Net Promoter Scores (NPS), delivery times, and identify both the top growth region and key operational risk areas.
+              </p>
+              <div class="instruction-tip">
+                📊 <strong>Outcome:</strong> 5 executive KPI metric tiles will populate with calculated figures and trend badges.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="instruction-card">
+            <div class="instruction-icon-wrap step-3-color">
+              <span class="instruction-step-num">3</span>
+            </div>
+            <div class="instruction-card-content">
+              <div class="instruction-card-header">
+                <h3>Generate AI Executive Narrative</h3>
+                <span class="step-tag">Gemini Generation</span>
+              </div>
+              <p>
+                Click <strong>"2. AI Narrative"</strong>. Google Gemini evaluates the verified metrics against the PowerPoint master template to author slide-by-slide executive copy: strategic titles, summaries, key insights, and prioritized recommendations.
+              </p>
+              <div class="instruction-tip">
+                📄 <strong>Outcome:</strong> A 5-slide preview appears in the left workspace matching the PowerPoint deck layout.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="instruction-card">
+            <div class="instruction-icon-wrap step-4-color">
+              <span class="instruction-step-num">4</span>
+            </div>
+            <div class="instruction-card-content">
+              <div class="instruction-card-header">
+                <h3>Customize via AI Copilot Chat</h3>
+                <span class="step-tag">In-Session Memory</span>
+              </div>
+              <p>
+                Review the narrative in the preview cards. If you want to change the tone, emphasize specific markets (e.g., APAC expansion), or revise recommendations, use the sticky <strong>💬 AI Copilot</strong> on the right.
+              </p>
+              <p>
+                Click suggestion chips or type your own instructions. Gemini updates the slide cards live and preserves your modifications across multiple conversation turns.
+              </p>
+              <div class="instruction-tip">
+                🔄 <strong>Session control:</strong> Click <strong>"Clear Chat"</strong> in the chat header anytime to reset the conversation history.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="instruction-card">
+            <div class="instruction-icon-wrap step-5-color">
+              <span class="instruction-step-num">5</span>
+            </div>
+            <div class="instruction-card-content">
+              <div class="instruction-card-header">
+                <h3>Build &amp; Download Presentation (.pptx)</h3>
+                <span class="step-tag">PowerPoint Automation</span>
+              </div>
+              <p>
+                Once satisfied with the narrative, click <strong>"🚀 Build Presentation"</strong> from any location (top navigation bar, chat footer, or narrative banner).
+              </p>
+              <p>
+                An animated progress modal appears as PowerPoint slides are assembled, charts are updated, and shapes are filled with your exact customized copy.
+              </p>
+              <div class="instruction-tip">
+                📥 <strong>Outcome:</strong> Click <strong>"📥 Download Presentation (.pptx)"</strong> to save your executive slide deck.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="instructions-modal-footer">
+          <button class="btn btn-primary btn-lg" onclick="closeInstructions()">
+            ✨ Got it, Let's Get Started!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
